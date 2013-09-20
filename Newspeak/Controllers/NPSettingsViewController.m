@@ -19,6 +19,7 @@
 
 #import "IIViewDeckController.h"
 #import "IASKPSTextFieldSpecifierViewCell.h"
+#import "IASKTextField.h"
 #import "NPSettingsViewController.h"
 #import "NPMessageTableViewController.h"
 
@@ -112,10 +113,10 @@
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+- (void)textFieldDidEndEditing:(IASKTextField *)textField
 {
     textField.text = [[textField.text lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    [[NSUserDefaults standardUserDefaults] setObject:textField.text forKey:@"NPSettingsBundleUsername"];
+    [[NSUserDefaults standardUserDefaults] setObject:textField.text forKey:textField.key];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

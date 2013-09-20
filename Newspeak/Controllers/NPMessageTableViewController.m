@@ -65,9 +65,12 @@
 - (void)requestAccessToken
 {
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"NPSettingsBundleUsername"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:@"NPSettingsBundlePassword"];
 
     if (username != nil &&
+        password != nil &&
         ![username isEqualToString:@""] &&
+        ![password isEqualToString:@""] &&
         [NPAPIClient sharedClient].accessToken == nil) {
         NSManagedObjectContext *managedObjectContext = [NPCoreDataSingleton sharedInstance].managedObjectContext;
         [managedObjectContext performBlock:^{
@@ -77,7 +80,7 @@
 
             NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Token" inManagedObjectContext:managedObjectContext];
             [managedObject setValue:username forKey:@"username"];
-            [managedObject setValue:username forKey:@"password"];
+            [managedObject setValue:password forKey:@"password"];
             NSError *error;
 
             if (![managedObjectContext save:&error]) {
