@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>io.newspeak.Newspeak</string>
+	<key>CFBundleName</key>
+	<string>Newspeak Documentation</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	
+	
+	
+	<key>DocSetFallbackURL</key>
+	<string>http://newspeak.github.com/newspeak-ios/</string>
+	<key>DocSetFeedName</key>
+	<string>Newspeak Documentation</string>
+	<key>DocSetFeedURL</key>
+	<string>http://newspeak.github.com/newspeak-ios/NPNewspeak.atom</string>
+	<key>DocSetMinimumXcodeVersion</key>
+	<string>3.0</string>
+	
+	<key>DashDocSetFamily</key>
+	<string>appledoc</string>
+	<key>DocSetPublisherIdentifier</key>
+	<string>io.newspeak.documentation</string>
+	<key>DocSetPublisherName</key>
+	<string>Jahn Bertsch</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2013 Jahn Bertsch. All rights reserved.</string>
+</dict>
+</plist>

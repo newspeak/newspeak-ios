@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NPCoreDataSingleton.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NPCoreDataSingleton</TokenIdentifier>
+			<Abstract type="html">Simplify CoreData usage.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/setManagedObjectContext:</TokenIdentifier>
+			<Abstract type="html">   Shared managed object context of the application.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectContext</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPCoreDataSingleton/managedObjectContext</TokenIdentifier>
+			<Abstract type="html">   Shared managed object context of the application.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectContext</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/setManagedObjectModel:</TokenIdentifier>
+			<Abstract type="html">   Shared managed object model of the application.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectModel</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPCoreDataSingleton/managedObjectModel</TokenIdentifier>
+			<Abstract type="html">   Shared managed object model of the application.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectModel</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/setPersistentStoreCoordinator:</TokenIdentifier>
+			<Abstract type="html">   Shared persistent store coordinator of the application.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator</Declaration>
+			
+			
+			<Anchor>//api/name/persistentStoreCoordinator</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPCoreDataSingleton/persistentStoreCoordinator</TokenIdentifier>
+			<Abstract type="html">   Shared persistent store coordinator of the application.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator</Declaration>
+			
+			
+			<Anchor>//api/name/persistentStoreCoordinator</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/setUseInMemoryStore:</TokenIdentifier>
+			<Abstract type="html">If true, all data is stored in RAM. Useful for unit testing.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useInMemoryStore</Declaration>
+			
+			
+			<Anchor>//api/name/useInMemoryStore</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPCoreDataSingleton/useInMemoryStore</TokenIdentifier>
+			<Abstract type="html">If true, all data is stored in RAM. Useful for unit testing.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useInMemoryStore</Declaration>
+			
+			
+			<Anchor>//api/name/useInMemoryStore</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/setUseCustomStore:</TokenIdentifier>
+			<Abstract type="html">If true, a custom store can be added later since no default store is used.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useCustomStore</Declaration>
+			
+			
+			<Anchor>//api/name/useCustomStore</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPCoreDataSingleton/useCustomStore</TokenIdentifier>
+			<Abstract type="html">If true, a custom store can be added later since no default store is used.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL useCustomStore</Declaration>
+			
+			
+			<Anchor>//api/name/useCustomStore</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NPCoreDataSingleton/sharedInstance</TokenIdentifier>
+			<Abstract type="html">The singleton object of this class.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>+ (NPCoreDataSingleton *)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/saveContext</TokenIdentifier>
+			<Abstract type="html">   Persist data.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)saveContext</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES on success</Abstract></ReturnValue>
+			<Anchor>//api/name/saveContext</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/addDefaultSQLiteStoreTo:</TokenIdentifier>
+			<Abstract type="html">   Adds a SQLiteStore in the default location to the passed persistent store
+   coordinator.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>- (void)addDefaultSQLiteStoreTo:(NSPersistentStoreCoordinator *)persistentStoreCoordinator</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>persistentStoreCoordinator</Name>
+					<Abstract type="html">The store coordinator the default SQLite
+   store is added to.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addDefaultSQLiteStoreTo:</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPCoreDataSingleton/reset</TokenIdentifier>
+			<Abstract type="html">   Unset current persistent store coordinator, managed object model and managed
+   object context and set default values.</Abstract>
+			<DeclaredIn>NPCoreDataSingleton.h</DeclaredIn>
+			
+			<Declaration>- (void)reset</Declaration>
+			
+			
+			<Anchor>//api/name/reset</Anchor>
+            
+		</Token>
+		
+        
+	</File>
+</Tokens>

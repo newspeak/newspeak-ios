@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NPMessageCell.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NPMessageCell</TokenIdentifier>
+			<Abstract type="html">Used in the message table.</Abstract>
+			<DeclaredIn>NPMessageCell.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

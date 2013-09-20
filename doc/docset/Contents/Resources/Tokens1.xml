@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NPAPIClient.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NPAPIClient</TokenIdentifier>
+			<Abstract type="html">   REST client to synchronize local CoreData store with the server.</Abstract>
+			<DeclaredIn>NPAPIClient.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPAPIClient/setAccessToken:</TokenIdentifier>
+			<Abstract type="html">Authenticate each API request using this token.</Abstract>
+			<DeclaredIn>NPAPIClient.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *accessToken</Declaration>
+			
+			
+			<Anchor>//api/name/accessToken</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPAPIClient/accessToken</TokenIdentifier>
+			<Abstract type="html">Authenticate each API request using this token.</Abstract>
+			<DeclaredIn>NPAPIClient.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, retain) NSString *accessToken</Declaration>
+			
+			
+			<Anchor>//api/name/accessToken</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NPAPIClient/sharedClient</TokenIdentifier>
+			<Abstract type="html">API client singleton.</Abstract>
+			<DeclaredIn>NPAPIClient.h</DeclaredIn>
+			
+			<Declaration>+ (NPAPIClient *)sharedClient</Declaration>
+			
+			
+			<Anchor>//api/name/sharedClient</Anchor>
+            
+		</Token>
+		
+        
+	</File>
+</Tokens>

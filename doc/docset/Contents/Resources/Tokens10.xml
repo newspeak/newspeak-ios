@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NPMessageTableViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NPMessageTableViewController</TokenIdentifier>
+			<Abstract type="html">   Message overview.</Abstract>
+			<DeclaredIn>NPMessageTableViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPMessageTableViewController/setSidebarButton:</TokenIdentifier>
+			<Abstract type="html">Sidebar button</Abstract>
+			<DeclaredIn>NPMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton</Declaration>
+			
+			
+			<Anchor>//api/name/sidebarButton</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPMessageTableViewController/sidebarButton</TokenIdentifier>
+			<Abstract type="html">Sidebar button</Abstract>
+			<DeclaredIn>NPMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton</Declaration>
+			
+			
+			<Anchor>//api/name/sidebarButton</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPMessageTableViewController/setAddButton:</TokenIdentifier>
+			<Abstract type="html">Add contact button</Abstract>
+			<DeclaredIn>NPMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton</Declaration>
+			
+			
+			<Anchor>//api/name/addButton</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPMessageTableViewController/addButton</TokenIdentifier>
+			<Abstract type="html">Add contact button</Abstract>
+			<DeclaredIn>NPMessageTableViewController.h</DeclaredIn>
+			
+			<Declaration>@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton</Declaration>
+			
+			
+			<Anchor>//api/name/addButton</Anchor>
+            
+		</Token>
+		
+        
+	</File>
+</Tokens>

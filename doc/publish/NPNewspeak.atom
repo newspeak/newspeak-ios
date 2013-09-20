@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
+    <id>http://newspeak.github.com/newspeak-ios/NPNewspeak.atom/20130918175816</id>
+    <title type="text">Newspeak Documentation</title>
+    <rights>Copyright © 2013 Jahn Bertsch. All rights reserved.</rights>
+    <link rel="self" href="http://newspeak.github.com/newspeak-ios/NPNewspeak.atom"></link>
+    <docset:publisherName>Jahn Bertsch</docset:publisherName>
+    <docset:publisherID>io.newspeak.documentation</docset:publisherID>
+    <updated>2013-09-18T17:58:16+02:00</updated>
+    <entry>
+        <id>tag:newspeak.github.com,2013-09-18:io.newspeak.Newspeak/1.0.0</id>
+        <title type="text">Newspeak Documentation</title>
+        <updated>2013-09-18T17:58:16+02:00</updated>
+        <content type="text">Newspeak Documentation (v1.0.0)</content>
+        <link rel="enclosure" type="application/octet-stream" href="http://newspeak.github.com/newspeak-ios/io.newspeak.Newspeak-1.0.xar" length="80123"></link>
+        <docset:identifier>io.newspeak.Newspeak</docset:identifier>
+        <docset:version>1.0.0</docset:version>
+        <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
+    </entry>
+</feed>
