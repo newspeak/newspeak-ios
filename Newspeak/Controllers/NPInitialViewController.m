@@ -55,6 +55,7 @@
 
         // this view controller is never deallocated, therefore register notificaitions here
         [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"NPSettingsBundleUsername" options:NSKeyValueObservingOptionNew context:NULL];
+        [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"NPSettingsBundlePassword" options:NSKeyValueObservingOptionNew context:NULL];
     }
 
     return self;
@@ -63,13 +64,15 @@
 - (void)dealloc
 {
     [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"NPSettingsBundleUsername"];
+    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"NPSettingsBundlePassword"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     DLog(@"kvo: %@ changed property %@ to value %@", object, keyPath, change);
 
-    if ([keyPath isEqualToString:@"NPSettingsBundleUsername"]) {
+    if ([keyPath isEqualToString:@"NPSettingsBundleUsername"] ||
+        [keyPath isEqualToString:@"NPSettingsBundlePassword"]) {
         // delete access token, force reconnection
         [NPAPIClient sharedClient].accessToken = nil;
     }
