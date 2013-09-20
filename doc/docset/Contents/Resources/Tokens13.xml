@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NPToken.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NPToken</TokenIdentifier>
+			<Abstract type="html">   CoreData entity representing an access token.</Abstract>
+			<DeclaredIn>NPToken.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

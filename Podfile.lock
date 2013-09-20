@@ -1,0 +1,65 @@
+PODS:
+  - AFDownloadRequestOperation (0.0.2):
+    - AFNetworking (~> 1.1)
+  - AFIncrementalStore (HEAD based on 0.5.1):
+    - AFNetworking (~> 1.3.2)
+    - InflectorKit
+    - TransformerKit
+  - AFNetworking (1.3.2)
+  - Appirater (1.0.5)
+  - CBIntrospect (HEAD based on 0.4.1)
+  - InAppSettingsKit (1.1)
+  - InflectorKit (0.0.1)
+  - KIF (2.0.0)
+  - Kiwi/ARC (2.2.1)
+  - Kiwi/NonARC (2.2.1)
+  - Kiwi/SenTestingKit (2.2.1):
+    - Kiwi/ARC
+    - Kiwi/NonARC
+  - Kiwi/XCTest (2.2.1):
+    - Kiwi/SenTestingKit
+  - Reachability (HEAD based on 3.1.1)
+  - Specta (HEAD based on 0.1.11)
+  - SVProgressHUD (HEAD based on 0.9)
+  - TestFlightSDK (2.0)
+  - TransformerKit (0.2.4)
+  - ViewDeck (2.3.1)
+
+DEPENDENCIES:
+  - AFDownloadRequestOperation
+  - AFIncrementalStore (HEAD)
+  - AFNetworking (= 1.3.2)
+  - Appirater
+  - CBIntrospect (HEAD)
+  - InAppSettingsKit
+  - KIF (~> 2.0)
+  - Kiwi/XCTest (from `https://github.com/modocache/Kiwi.git`, commit `343a1ee0f6`)
+  - Reachability (HEAD)
+  - Specta (HEAD)
+  - SVProgressHUD (HEAD)
+  - TestFlightSDK (= 2.0)
+  - ViewDeck
+
+EXTERNAL SOURCES:
+  Kiwi:
+    :commit: 343a1ee0f6
+    :git: https://github.com/modocache/Kiwi.git
+
+SPEC CHECKSUMS:
+  AFDownloadRequestOperation: cd6a69e0ffbb70dd2a929d9e7ad664d01d873546
+  AFIncrementalStore: 4b5033a6a5045be8c9985740e8a563b17db9eb68
+  AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
+  Appirater: 5addfe3fac0aa85209b553f894b6b0533152786f
+  CBIntrospect: 34f93a5cbb0c3db363cd4886ba6a85faefc4362b
+  InAppSettingsKit: cf2c4193c3269d6acf996f7975f310d18a5e1e3c
+  InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
+  KIF: ff3b46deb62ce3f8e99c6a2c786729e1eea241ba
+  Kiwi: 5882382d546ad88dcae1cde512523007f30d7a41
+  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
+  Specta: 82746c6fd70b104c5d37cfbadb7bf15a2cbc4da0
+  SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
+  TestFlightSDK: 940906d4b2550cf397c6f2d2fcc4ebfdcd8ae858
+  TransformerKit: 3c60759694b70d41b833dfe4005b031762d54e7f
+  ViewDeck: 2cdc67c4b41a10cafc7556b982f028409e33604d
+
+COCOAPODS: 0.24.0

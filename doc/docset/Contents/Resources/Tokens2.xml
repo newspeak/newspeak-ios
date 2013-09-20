@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NPAppDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NPAppDelegate</TokenIdentifier>
+			<Abstract type="html">App delegate.</Abstract>
+			<DeclaredIn>NPAppDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NPAppDelegate/setWindow:</TokenIdentifier>
+			<Abstract type="html">Main window</Abstract>
+			<DeclaredIn>NPAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/NPAppDelegate/window</TokenIdentifier>
+			<Abstract type="html">Main window</Abstract>
+			<DeclaredIn>NPAppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            
+		</Token>
+		
+        
+	</File>
+</Tokens>

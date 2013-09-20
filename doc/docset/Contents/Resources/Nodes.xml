@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>Newspeak</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node>
+					<Name>Categories</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="14"/>
+						
+					</Subnodes>
+				</Node>
+				
+                
+                
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1">
+            <Name>NPAPIClient</Name>
+            <Path>Classes/NPAPIClient.html</Path>
+            
+        </Node>
+		<Node id="2">
+            <Name>NPAppDelegate</Name>
+            <Path>Classes/NPAppDelegate.html</Path>
+            
+        </Node>
+		<Node id="3">
+            <Name>NPComposeViewController</Name>
+            <Path>Classes/NPComposeViewController.html</Path>
+            
+        </Node>
+		<Node id="4">
+            <Name>NPCoreDataSingleton</Name>
+            <Path>Classes/NPCoreDataSingleton.html</Path>
+            
+        </Node>
+		<Node id="5">
+            <Name>NPDevice</Name>
+            <Path>Classes/NPDevice.html</Path>
+            
+        </Node>
+		<Node id="6">
+            <Name>NPIncrementalStore</Name>
+            <Path>Classes/NPIncrementalStore.html</Path>
+            
+        </Node>
+		<Node id="7">
+            <Name>NPInitialViewController</Name>
+            <Path>Classes/NPInitialViewController.html</Path>
+            
+        </Node>
+		<Node id="8">
+            <Name>NPMessage</Name>
+            <Path>Classes/NPMessage.html</Path>
+            
+        </Node>
+		<Node id="9">
+            <Name>NPMessageCell</Name>
+            <Path>Classes/NPMessageCell.html</Path>
+            
+        </Node>
+		<Node id="10">
+            <Name>NPMessageTableViewController</Name>
+            <Path>Classes/NPMessageTableViewController.html</Path>
+            
+        </Node>
+		<Node id="11">
+            <Name>NPSettingsViewController</Name>
+            <Path>Classes/NPSettingsViewController.html</Path>
+            
+        </Node>
+		<Node id="12">
+            <Name>NPSidebarViewController</Name>
+            <Path>Classes/NPSidebarViewController.html</Path>
+            
+        </Node>
+		<Node id="13">
+            <Name>NPToken</Name>
+            <Path>Classes/NPToken.html</Path>
+            
+        </Node>
+		
+		<Node id="14">
+            <Name>UIColor(NPColor)</Name>
+            <Path>Categories/UIColor+NPColor.html</Path>
+            
+        </Node>
+		
+        
+        
+	</Library>
+</DocSetNodes>

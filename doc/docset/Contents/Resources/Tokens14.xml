@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIColor+NPColor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIColor(NPColor)</TokenIdentifier>
+			<Abstract type="html">Define custom colors.</Abstract>
+			<DeclaredIn>UIColor+NPColor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIColor(NPColor)/defaultTintColor</TokenIdentifier>
+			<Abstract type="html">Default UI tint color.</Abstract>
+			<DeclaredIn>UIColor+NPColor.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)defaultTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/defaultTintColor</Anchor>
+            
+		</Token>
+		
+        
+	</File>
+</Tokens>
