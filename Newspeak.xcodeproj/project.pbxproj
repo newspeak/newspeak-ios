@@ -47,6 +47,8 @@
 		1768EDA117E8826B00421E1F /* NPAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1768EDA017E8826B00421E1F /* NPAppDelegateSpec.m */; };
 		177802A217E97F7700276C99 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 177802A117E97F7700276C99 /* README.md */; };
 		178290E617ECA0BF008ED357 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 178290E517ECA0BF008ED357 /* Media.xcassets */; };
+		178290EB17EDCC02008ED357 /* InterfaceBuilder.strings in Resources */ = {isa = PBXBuildFile; fileRef = 178290E717EDCC02008ED357 /* InterfaceBuilder.strings */; };
+		178290EC17EDCC02008ED357 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 178290E917EDCC02008ED357 /* Localizable.strings */; };
 		178E767C17E8896700F127CF /* NPCoreDataSingletonSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E767B17E8896700F127CF /* NPCoreDataSingletonSpec.m */; };
 		17B929AD17B891CC00ECFDC0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B929AB17B891C100ECFDC0 /* SystemConfiguration.framework */; };
 		17B929AE17B891CC00ECFDC0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B929A917B891A800ECFDC0 /* QuartzCore.framework */; };
@@ -137,6 +139,8 @@
 		1768EDA017E8826B00421E1F /* NPAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPAppDelegateSpec.m; sourceTree = "<group>"; };
 		177802A117E97F7700276C99 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		178290E517ECA0BF008ED357 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		178290E817EDCC02008ED357 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Newspeak/en.lproj/InterfaceBuilder.strings; sourceTree = SOURCE_ROOT; };
+		178290EA17EDCC02008ED357 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Newspeak/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		178E767B17E8896700F127CF /* NPCoreDataSingletonSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPCoreDataSingletonSpec.m; sourceTree = "<group>"; };
 		17B929A717B8919500ECFDC0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		17B929A917B891A800ECFDC0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -328,6 +332,7 @@
 		174D1EE917B88467009F7B79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				178290ED17EDCC09008ED357 /* en.lproj */,
 				178290E517ECA0BF008ED357 /* Media.xcassets */,
 				174D1F0A17B88467009F7B79 /* Settings.bundle */,
 			);
@@ -363,6 +368,15 @@
 				1768ED9A17E8820D00421E1F /* UnitTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		178290ED17EDCC09008ED357 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				178290E717EDCC02008ED357 /* InterfaceBuilder.strings */,
+				178290E917EDCC02008ED357 /* Localizable.strings */,
+			);
+			name = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,10 +494,12 @@
 			files = (
 				17124C0117B8829C009FF841 /* InfoPlist.strings in Resources */,
 				17124C0917B8829C009FF841 /* Default.png in Resources */,
+				178290EC17EDCC02008ED357 /* Localizable.strings in Resources */,
 				178290E617ECA0BF008ED357 /* Media.xcassets in Resources */,
 				17124C0B17B8829C009FF841 /* Default@2x.png in Resources */,
 				17124C0D17B8829C009FF841 /* Default-568h@2x.png in Resources */,
 				17124C1317B8829C009FF841 /* MainStoryboard_iPad.storyboard in Resources */,
+				178290EB17EDCC02008ED357 /* InterfaceBuilder.strings in Resources */,
 				177802A217E97F7700276C99 /* README.md in Resources */,
 				174D1F3817B88467009F7B79 /* Settings.bundle in Resources */,
 				17BF6BD817B884D60048F675 /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -705,6 +721,22 @@
 				1768ED9617E8820D00421E1F /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		178290E717EDCC02008ED357 /* InterfaceBuilder.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				178290E817EDCC02008ED357 /* en */,
+			);
+			name = InterfaceBuilder.strings;
+			sourceTree = "<group>";
+		};
+		178290E917EDCC02008ED357 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				178290EA17EDCC02008ED357 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		17BF6BD617B884D60048F675 /* MainStoryboard_iPhone.storyboard */ = {

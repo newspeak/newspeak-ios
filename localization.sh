@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/bin/sh -x
 
-# update mogenerator files
-#
-# for more information, see https://github.com/rentzsch/mogenerator
+# generate localizable strings from interface builder and source files
 
 # newspeak.io
 # Copyright (C) 2013 Jahn Bertsch
@@ -20,7 +18,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 cd $(dirname $0)
-mogenerator --output-dir newspeak/Models/ --template-var arc=true -m newspeak/Models/newspeak.xcdatamodeld/newspeak.xcdatamodel
 
-echo
-echo "it is advised to run uncrustify now - mogenerator does not adhere to current coding style"
+# extract strings from interface builder
+ibtool --generate-strings-file Newspeak/en.lproj/InterfaceBuilder.strings Newspeak/en.lproj/MainStoryboard_iPhone.storyboard
+
+# extract strings from source code
+genstrings -o Newspeak/en.lproj/ Newspeak/*.m Newspeak/Models/*.m Newspeak/Controllers/*.m Newspeak/Views/*.m
