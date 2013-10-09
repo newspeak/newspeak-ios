@@ -1,5 +1,5 @@
 #ifndef SPT_SUBCLASS
-#define SPT_SUBCLASS SPTSenTestCase
+#define SPT_SUBCLASS SPTXCTestCase
 #endif
 
 #define _SPT_SpecBegin(name, file, line) \

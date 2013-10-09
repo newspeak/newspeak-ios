@@ -142,14 +142,13 @@ void SPT_itShouldBehaveLike(const char *fileName, NSUInteger lineNumber, NSStrin
       });
     }
   } else {
-    SPTSenTestCase *currentTestCase = [[[NSThread currentThread] threadDictionary] objectForKey:@"SPT_currentTestCase"];
+    SPTXCTestCase *currentTestCase = [[[NSThread currentThread] threadDictionary] objectForKey:@"SPT_currentTestCase"];
     if(currentTestCase) {
-      NSException *exception = [NSException failureInFile:[NSString stringWithUTF8String:fileName] atLine:(int)lineNumber withDescription:@"itShouldBehaveLike should not be invoked inside an example block!"];
-      [currentTestCase failWithException: exception];
+        [currentTestCase recordFailureWithDescription:@"itShouldBehaveLike should not be invoked inside an example block!" inFile:[NSString stringWithUTF8String:fileName] atLine:lineNumber expected:YES];
     } else {
       it(name, ^{
-        NSException *exception = [NSException failureInFile:[NSString stringWithUTF8String:fileName] atLine:(int)lineNumber withDescription:[NSString stringWithFormat:@"Shared example group \"%@\" does not exist.", name]];
-        [exception raise];
+        NSString *message = [NSString stringWithFormat:@"Shared example group \\\"%@\\\" does not exist.", name];
+        [currentTestCase recordFailureWithDescription:message inFile:[NSString stringWithUTF8String:fileName] atLine:lineNumber expected:NO];
       });
     }
   }

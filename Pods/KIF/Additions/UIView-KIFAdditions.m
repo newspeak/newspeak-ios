@@ -102,7 +102,7 @@ typedef struct __GSEvent * GSEventRef;
             accessibilityValue = [(NSAttributedString *)accessibilityValue string];
         }
         
-        BOOL labelsMatch = [element.accessibilityLabel isEqual:label];
+        BOOL labelsMatch = element.accessibilityLabel == label || [element.accessibilityLabel isEqual:label];
         BOOL traitsMatch = ((element.accessibilityTraits) & traits) == traits;
         BOOL valuesMatch = !value || [value isEqual:accessibilityValue];
 
@@ -576,6 +576,21 @@ typedef struct __GSEvent * GSEventRef;
 - (BOOL)isNavigationItemView;
 {
     return [self isKindOfClass:NSClassFromString(@"UINavigationItemView")] || [self isKindOfClass:NSClassFromString(@"_UINavigationBarBackIndicatorView")];
+}
+
+- (UIWindow *)windowOrIdentityWindow
+{
+    if (CGAffineTransformIsIdentity(self.window.transform)) {
+        return self.window;
+    }
+    
+    for (UIWindow *window in [[UIApplication sharedApplication] windowsWithKeyWindow]) {
+        if (CGAffineTransformIsIdentity(window.transform)) {
+            return window;
+        }
+    }
+    
+    return nil;
 }
 
 @end

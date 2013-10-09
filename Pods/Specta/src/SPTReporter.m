@@ -58,45 +58,41 @@
   [super dealloc];
 }
 
-// ===== SenTestObserver ===============================================================================================
-#pragma mark - SenTestObserver
+// ===== XCTestObserver ===============================================================================================
+#pragma mark - XCTestObserver
 
 #define SPTSharedReporter ([SPTReporter sharedReporter])
 
-+ (void)testSuiteDidStart:(NSNotification *) aNotification
-{
-  [SPTSharedReporter testSuiteDidBegin:aNotification.object];
+- (void)testSuiteDidStart:(XCTestRun *)testRun {
+  [SPTSharedReporter testCaseDidBegin:(XCTestCaseRun *)testRun];
 }
 
-+ (void)testSuiteDidStop:(NSNotification *) aNotification
-{
-  [SPTSharedReporter testSuiteDidEnd:aNotification.object];
+- (void)testSuiteDidStop:(XCTestRun *)testRun {
+  [SPTSharedReporter testSuiteDidEnd:(XCTestSuiteRun *)testRun];
 }
 
-+ (void)testCaseDidStart:(NSNotification *) aNotification
-{
-  [SPTSharedReporter testCaseDidBegin:aNotification.object];
+- (void)testCaseDidStart:(XCTestRun *)testRun {
+  [SPTSharedReporter testCaseDidBegin:(XCTestCaseRun *)testRun];
 }
 
-+ (void)testCaseDidStop:(NSNotification *) aNotification
-{
-  [SPTSharedReporter testCaseDidEnd:aNotification.object];
+- (void)testCaseDidStop:(XCTestRun *)testRun {
+  [SPTSharedReporter testCaseDidEnd:(XCTestCaseRun *)testRun];
 }
 
-+ (void)testCaseDidFail:(NSNotification *) aNotification
-{
-  [SPTSharedReporter testCaseDidFail:aNotification.object];
+- (void)testCaseDidFail:(XCTestRun *)testRun withDescription:(NSString *)description inFile:(NSString *)filePath atLine:(NSUInteger)lineNumber {
+//    [super testCaseDidFail:testRun withDescription:description inFile:filePath atLine:lineNumber];
+    [SPTSharedReporter testCaseDidFail:(XCTestCaseRun *)testRun];
 }
 
 // ===== RUN STACK =====================================================================================================
 #pragma mark - Run Stack
 
-- (void)pushRunStack:(SenTestRun *)run
+- (void)pushRunStack:(XCTestRun *)run
 {
   [(NSMutableArray *)self.runStack addObject:run];
 }
 
-- (void)popRunStack:(SenTestRun *)run
+- (void)popRunStack:(XCTestRun *)run
 {
   NSAssert(run != nil,
            @"Attempt to pop nil test run");
@@ -112,12 +108,12 @@
 // ===== TEST SUITE ====================================================================================================
 #pragma mark - Test Suite
 
-- (void)testSuiteDidBegin:(SenTestSuiteRun *)suiteRun
+- (void)testSuiteDidBegin:(XCTestSuiteRun *)suiteRun
 {
   [self pushRunStack:suiteRun];
 }
 
-- (void)testSuiteDidEnd:(SenTestSuiteRun *)suiteRun
+- (void)testSuiteDidEnd:(XCTestSuiteRun *)suiteRun
 {
   [self popRunStack:suiteRun];
 }
@@ -125,17 +121,17 @@
 // ===== TEST CASES ====================================================================================================
 #pragma mark - Test Cases
 
-- (void)testCaseDidBegin:(SenTestCaseRun *)testCaseRun
+- (void)testCaseDidBegin:(XCTestCaseRun *)testCaseRun
 {
   [self pushRunStack:testCaseRun];
 }
 
-- (void)testCaseDidEnd:(SenTestCaseRun *)testCaseRun
+- (void)testCaseDidEnd:(XCTestCaseRun *)testCaseRun
 {
   [self popRunStack:testCaseRun];
 }
 
-- (void)testCaseDidFail:(SenTestCaseRun *)testCaseRun
+- (void)testCaseDidFail:(XCTestCaseRun *)testCaseRun
 {
 
 }

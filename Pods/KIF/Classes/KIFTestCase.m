@@ -8,6 +8,8 @@
 //  which Square, Inc. licenses this file to you.
 
 #import "KIFTestCase.h"
+#import <UIKit/UIKit.h>
+#import "UIApplication-KIFAdditions.h"
 #import "KIFTestActor.h"
 
 #define SIG(class, selector) [class instanceMethodSignatureForSelector:selector]
@@ -79,6 +81,10 @@
 
 - (void)failWithException:(NSException *)exception stopTest:(BOOL)stop
 {
+    if (stop) {
+        [self writeScreenshotForException:exception];
+    }
+    
     if (stop && self.stopTestsOnFirstBigFailure) {
         NSLog(@"Fatal failure encountered: %@", exception.description);
         NSLog(@"Stopping tests since stopTestsOnFirstBigFailure = YES");
@@ -90,6 +96,11 @@
     } else {
         [super failWithException:exception stopTest:stop];
     }
+}
+
+- (void)writeScreenshotForException:(NSException *)exception;
+{
+    [[UIApplication sharedApplication] writeScreenshotForLine:exception.lineNumber.unsignedIntegerValue inFile:exception.filename description:nil error:NULL];
 }
 
 @end

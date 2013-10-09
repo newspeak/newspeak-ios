@@ -12,6 +12,10 @@
 #import "UIApplication-KIFAdditions.h"
 #import "NSError-KIFAdditions.h"
 
+@interface UIApplication (Private)
+- (BOOL)rotateIfNeeded:(UIDeviceOrientation)orientation;
+@end
+
 @implementation KIFSystemTestActor
 
 - (NSNotification *)waitForNotificationName:(NSString*)name object:(id)object
@@ -55,6 +59,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:UIApplicationDidReceiveMemoryWarningNotification object:[UIApplication sharedApplication]];
 }
 
+- (void)simulateDeviceRotationToOrientation:(UIDeviceOrientation)orientation
+{
+    [[UIApplication sharedApplication] rotateIfNeeded:orientation];
+}
+
 - (void)waitForApplicationToOpenAnyURLWhileExecutingBlock:(void (^)())block returning:(BOOL)returnValue
 {
     [self waitForApplicationToOpenURL:nil whileExecutingBlock:block returning:returnValue];
@@ -70,6 +79,14 @@
     NSString *actualURLString = [[notification.userInfo objectForKey:UIApplicationOpenedURLKey] absoluteString];
     if (URLString && ![URLString isEqualToString:actualURLString]) {
         [self failWithError:[NSError KIFErrorWithFormat:@"Expected %@, got %@", URLString, actualURLString] stopTest:YES];
+    }
+}
+
+- (void)captureScreenshotWithDescription:(NSString *)description
+{
+    NSError *error;
+    if (![[UIApplication sharedApplication] writeScreenshotForLine:(NSUInteger)self.line inFile:self.file description:description error:&error]) {
+        [self failWithError:error stopTest:NO];
     }
 }
 

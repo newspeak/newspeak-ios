@@ -1,7 +1,7 @@
 #import "SPTDefaultReporter.h"
-#import "SPTSenTestCase.h"
-#import "SenTestRun+Specta.h"
-#import "SenTestCase+Specta.h"
+#import "SPTXCTestCase.h"
+#import "XCTestRun+Specta.h"
+#import "XCTestCase+Specta.h"
 #import "SpectaUtility.h"
 #import <objc/runtime.h>
 
@@ -17,12 +17,12 @@
                         count:(NSInteger)count;
 
 - (void)printSectionHeader:(NSString *)header;
-- (void)printSessionSections:(SenTestSuiteRun *)suiteRun;
-- (void)printSessionDetails:(SenTestSuiteRun *)suiteRun;
-- (void)printSessionResults:(SenTestSuiteRun *)suiteRn;
+- (void)printSessionSections:(XCTestSuiteRun *)suiteRun;
+- (void)printSessionDetails:(XCTestSuiteRun *)suiteRun;
+- (void)printSessionResults:(XCTestSuiteRun *)suiteRun;
 - (void)printSummaryForTestCaseClass:(Class)testCaseClass
                         testCaseRuns:(NSArray *)testCaseRuns;
-- (void)printXCodeIntegrationOutputForSession:(SenTestRun *)sessionRun;
+- (void)printXCodeIntegrationOutputForSession:(XCTestRun *)sessionRun;
 
 @end
 
@@ -48,11 +48,11 @@
 // ===== SPTReporter ===================================================================================================
 #pragma mark - SPTReporter
 
-- (void)testSuiteDidBegin:(SenTestSuiteRun *)suiteRun
+- (void)testSuiteDidBegin:(XCTestSuiteRun *)suiteRun
 {
   if ([self.runStack count] == 0)
   {
-    SenTestSuite * testSuite = (SenTestSuite *)[suiteRun test];
+    XCTestSuite * testSuite = (XCTestSuite *)[suiteRun test];
     
     [self printLineWithFormat:@"Running %lu tests:",
                               (unsigned long)[testSuite testCaseCount]];
@@ -62,7 +62,7 @@
   [super testSuiteDidBegin:suiteRun];
 }
 
-- (void)testSuiteDidEnd:(SenTestSuiteRun *)suiteRun
+- (void)testSuiteDidEnd:(XCTestSuiteRun *)suiteRun
 {
   [super testSuiteDidEnd:suiteRun];
   
@@ -74,7 +74,7 @@
   }
 }
 
-- (void)testCaseDidEnd:(SenTestCaseRun *)testCaseRun
+- (void)testCaseDidEnd:(XCTestCaseRun *)testCaseRun
 {
   [super testCaseDidEnd:testCaseRun];
   
@@ -110,7 +110,7 @@
   [self printStringWithFormat:@"# ----- %@ --------------------\n\n", header];
 }
 
-- (void)printSessionSections:(SenTestSuiteRun *)suiteRun
+- (void)printSessionSections:(XCTestSuiteRun *)suiteRun
 {
   [self printXCodeIntegrationOutputForSession:suiteRun];
   if ([suiteRun hasSucceeded] == NO || [suiteRun pendingTestCaseCount] > 0)
@@ -120,14 +120,14 @@
   [self printSessionResults:suiteRun];
 }
 
-- (void)printSessionDetails:(SenTestSuiteRun *)suiteRun
+- (void)printSessionDetails:(XCTestSuiteRun *)suiteRun
 {
   [self printSectionHeader:@"Details"];
   
   NSMutableArray * testCaseClassNames = [NSMutableArray array];
   NSMutableDictionary * testRunsByTestClass = [NSMutableDictionary dictionary];
   
-  [suiteRun SPT_visitTestCaseRunsWithBlock:^(SenTestCaseRun *testRun) {
+  [suiteRun SPT_visitTestCaseRunsWithBlock:^(XCTestCaseRun *testRun) {
     
     NSString * testCaseClassName = NSStringFromClass([[testRun test] class]);
     if ([testCaseClassNames containsObject:testCaseClassName] == NO)
@@ -157,7 +157,7 @@
   }
 }
 
-- (void)printSessionResults:(SenTestSuiteRun *)suiteRun
+- (void)printSessionResults:(XCTestSuiteRun *)suiteRun
 {
   [self printSectionHeader:@"Results"];
   
@@ -211,7 +211,7 @@
   NSUInteger numberOfExceptions = 0;
   NSUInteger numberOfPendingTests = 0;
   
-  for (SenTestCaseRun * testRun in testCaseRuns)
+  for (XCTestCaseRun * testRun in testCaseRuns)
   {
     numberOfTests += testRun.testCaseCount;
     numberOfSkippedTests += testRun.skippedTestCaseCount;
@@ -232,57 +232,60 @@
                               class_getName(testCaseClass),
                               runInfo];
 
-    for (SenTestCaseRun * testRun in testCaseRuns)
+    for (XCTestCaseRun * testRun in testCaseRuns)
     {
       if ([testRun pendingTestCaseCount] > 0)
       {
         [self printLineWithFormat:@"  - %@ (PENDING)",
-                                 [(SenTestCase *)[testRun test] SPT_title]];
+                                 [(XCTestCase *)[testRun test] SPT_title]];
         [self printLine];
       }
-      
-      for (NSException * failure in testRun.exceptions)
-      {
-        if ([failure.name isEqualToString:SenTestFailureException])
-        {
-          [self printLineWithFormat:@"  - %@ (FAILURE)\n    %@:%@\n\n    %@",
-                                    [(SenTestCase *)[testRun test] SPT_title],
-                                    [failure filename],
-                                    [failure lineNumber],
-                                    [failure reason]];
-        }
-        else
-        {
-          [self printLineWithFormat:@"  - %@\n    %@\n\n    %@",
-                                    [(SenTestCase *)[testRun test] SPT_title],
-                                    [failure name],
-                                    [failure reason]];
-        }
-        [self printLine];
-      }
+
+      // TODO: fix me
+//      for (NSException * failure in testRun.exceptions)
+//      {
+//        if ([failure.name isEqualToString:SenTestFailureException])
+//        {
+//          [self printLineWithFormat:@"  - %@ (FAILURE)\n    %@:%@\n\n    %@",
+//                                    [(XCTestCase *)[testRun test] SPT_title],
+//                                    [failure filename],
+//                                    [failure lineNumber],
+//                                    [failure reason]];
+//        }
+//        else
+//        {
+//          [self printLineWithFormat:@"  - %@\n    %@\n\n    %@",
+//                                    [(XCTestCase *)[testRun test] SPT_title],
+//                                    [failure name],
+//                                    [failure reason]];
+//        }
+//        [self printLine];
+//      }
+
     }
     
     
   }
 }
 
-- (void)printXCodeIntegrationOutputForTestCaseRun:(SenTestCaseRun *)testRun
+- (void)printXCodeIntegrationOutputForTestCaseRun:(XCTestCaseRun *)testRun
 {
   [self printLineWithFormat:@"    Test Case '%@' started.", [testRun test]];
   
   if ([testRun hasSucceeded] == NO)
   {
-    for (NSException * failure in testRun.exceptions)
-    {
-      NSString * filename = failure.filePathInProject;
-      NSNumber * lineNumber = failure.lineNumber;
-              
-      [self printLineWithFormat:@"\n%@:%@: error: %@ : %@\n",
-                                filename,
-                                lineNumber,
-                                [testRun test],
-                                [failure reason]];
-    }
+    // TODO: fix me
+//    for (NSException * failure in testRun.exceptions)
+//    {
+//      NSString * filename = failure.filePathInProject;
+//      NSNumber * lineNumber = failure.lineNumber;
+//
+//      [self printLineWithFormat:@"\n%@:%@: error: %@ : %@\n",
+//                                filename,
+//                                lineNumber,
+//                                [testRun test],
+//                                [failure reason]];
+//    }
   }
   
   [self printLineWithFormat:@"    Test Case '%@' %s (%.3f seconds).",
@@ -291,11 +294,11 @@
                             [testRun totalDuration]];
 }
 
-- (void)printXCodeIntegrationOutputForSession:(SenTestRun *)sessionRun
+- (void)printXCodeIntegrationOutputForSession:(XCTestRun *)sessionRun
 {
-  [self printSectionHeader:@"XCode (OCUnit) Test Output"];
+  [self printSectionHeader:@"XCode (XCTest) Test Output"];
   
-  [sessionRun SPT_visitTestCaseRunsWithBlock:^(SenTestCaseRun *testRun) {
+  [sessionRun SPT_visitTestCaseRunsWithBlock:^(XCTestCaseRun *testRun) {
     
     if ([self reportFailuresImmediately] == NO || [testRun hasSucceeded])
     {
