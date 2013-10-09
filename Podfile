@@ -2,7 +2,7 @@ platform :ios, '5.0'
 
 inhibit_all_warnings!
 
-pod 'AFNetworking', "1.3.2"
+pod 'AFNetworking', "1.3.3"
 pod 'AFIncrementalStore', :head
 pod 'AFDownloadRequestOperation'
 pod 'SVProgressHUD', :head
