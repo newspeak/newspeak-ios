@@ -1,5 +1,1 @@
-#import "SPTReporter.h"
-
-@interface SPTDefaultReporter : SPTReporter
-
-@end
+../../Specta/src/SPTDefaultReporter.h

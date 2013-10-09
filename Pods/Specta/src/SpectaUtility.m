@@ -1,5 +1,5 @@
 #import "SpectaUtility.h"
-#import "SPTSenTestCase.h"
+#import "SPTXCTestCase.h"
 #import <objc/runtime.h>
 
 // http://clang.llvm.org/docs/Block-ABI-Apple.html
@@ -53,7 +53,7 @@ BOOL SPT_IsSpecClass(Class aClass)
 {
   Class superclass = class_getSuperclass(aClass);
   while (superclass != Nil) {
-    if (superclass == [SPTSenTestCase class]) {
+    if (superclass == [SPTXCTestCase class]) {
       return YES;
     } else {
       superclass = class_getSuperclass(superclass);

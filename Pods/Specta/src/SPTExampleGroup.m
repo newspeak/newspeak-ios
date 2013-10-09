@@ -1,6 +1,6 @@
 #import "SPTExampleGroup.h"
 #import "SPTExample.h"
-#import "SPTSenTestCase.h"
+#import "SPTXCTestCase.h"
 #import "SPTSpec.h"
 #import "SpectaUtility.h"
 #import <libkern/OSAtomic.h>
@@ -35,10 +35,9 @@ static void runExampleBlock(id block, NSString *name) {
     }
     if (!complete) {
       NSString *message = [NSString stringWithFormat:@"\"%@\" failed to invoke done() callback before timeout (%f seconds)", name, timeout];
-      SPTSenTestCase *currentTestCase = [[[NSThread currentThread] threadDictionary] objectForKey:@"SPT_currentTestCase"];
+      SPTXCTestCase *currentTestCase = [[[NSThread currentThread] threadDictionary] objectForKey:@"SPT_currentTestCase"];
       SPTSpec *spec = [[currentTestCase class] SPT_spec];
-      NSException *exception = [NSException failureInFile:spec.fileName atLine:(int)spec.lineNumber withDescription:message];
-      [currentTestCase failWithException: exception];
+      [currentTestCase recordFailureWithDescription:message inFile:spec.fileName atLine:spec.lineNumber expected:NO];
     }
   } else {
     ((SPTVoidBlock)block)();

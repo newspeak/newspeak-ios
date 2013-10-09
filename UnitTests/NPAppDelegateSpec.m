@@ -17,11 +17,12 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import <Kiwi/Kiwi.h>
+#import "Specta.h"
+#import "Expecta.h"
 #import "NPAppDelegate.h"
 #import "NPCoreDataSingleton.h"
 
-SPEC_BEGIN(AppDelegateSpec)
+SpecBegin(AppDelegateSpec)
 
 describe(@"AppDelegate", ^{
     __block NPAppDelegate *appDelegate = nil;
@@ -32,10 +33,10 @@ describe(@"AppDelegate", ^{
     context(@"when finished launching", ^{
         it(@"should set up CoreData.", ^{
             [appDelegate application:nil didFinishLaunchingWithOptions:nil];
-            [[[NPCoreDataSingleton sharedInstance].managedObjectContext shouldNot] beNil];
+            expect([NPCoreDataSingleton sharedInstance].managedObjectContext).toNot.beNil();
         });
     });
 });
 
-SPEC_END
+SpecEnd
 

@@ -1,6 +1,6 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface SPTReporter : SenTestObserver {
+@interface SPTReporter : XCTestObserver {
   NSArray *_runStack;
 }
 
@@ -17,15 +17,15 @@
 // ===== TEST SUITE ====================================================================================================
 #pragma mark - Test Suite
 
-- (void)testSuiteDidBegin:(SenTestSuiteRun *)suiteRun;
-- (void)testSuiteDidEnd:(SenTestSuiteRun *)suiteRun;
+- (void)testSuiteDidBegin:(XCTestSuiteRun *)suiteRun;
+- (void)testSuiteDidEnd:(XCTestSuiteRun *)suiteRun;
 
 // ===== TEST CASES ====================================================================================================
 #pragma mark - Test Cases
 
-- (void)testCaseDidBegin:(SenTestCaseRun *)testCaseRun;
-- (void)testCaseDidEnd:(SenTestCaseRun *)testCaseRun;
-- (void)testCaseDidFail:(SenTestCaseRun *)testCaseRun;
+- (void)testCaseDidBegin:(XCTestCaseRun *)testCaseRun;
+- (void)testCaseDidEnd:(XCTestCaseRun *)testCaseRun;
+- (void)testCaseDidFail:(XCTestCaseRun *)testCaseRun;
 
 // ===== PRINTING ======================================================================================================
 #pragma mark - Printing
