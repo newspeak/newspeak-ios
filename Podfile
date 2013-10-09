@@ -13,15 +13,15 @@ pod 'Appirater'
 pod 'CBIntrospect', :head
 pod 'TestFlightSDK', "2.0"
 
-# add kiwi as an exclusive dependency for the UnitTests target
-# Currently based on https://github.com/modocache/KiwiFutureProofingSamples
 target :UnitTests, exclusive: true do
-   pod 'Kiwi/XCTest', git: 'https://github.com/modocache/Kiwi.git',
-                      commit: '343a1ee0f6'
+   pod 'Specta', git: 'https://github.com/mgrimes/specta.git',
+                 branch: 'xctest_integration'
+   pod 'Expecta', git: 'https://github.com/twobitlabs/expecta.git',
+                  branch: 'xcode-5'
 end
 
-# add kif for the IntegrationTests target
 target 'IntegrationTests' do
-  pod 'Specta', :head
-  pod 'KIF', '~> 2.0'
+  pod 'Specta', git: 'https://github.com/mgrimes/specta.git',
+                branch: 'xctest_integration'
+  pod 'KIF', :head
 end
