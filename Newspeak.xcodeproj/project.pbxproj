@@ -408,6 +408,7 @@
 				171A39821805CB0E009FF8D5 /* Frameworks */,
 				171A39831805CB0E009FF8D5 /* Resources */,
 				EF2AA723AACF406B9CF24B29 /* Copy Pods Resources */,
+				178E366A1805D8DB00D101F3 /* Reset Simulator */,
 			);
 			buildRules = (
 			);
@@ -535,6 +536,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		178E366A1805D8DB00D101F3 /* Reset Simulator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Reset Simulator";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/osascript;
+			shellScript = "# ios simulator has to be running for this applescript to work!\n\nactivate application \"iOS-Simulator\"\ntell application \"System Events\"\nclick menu item 5 of menu 1 of menu bar item 2 of menu bar 1 of process \"iOS-Simulator\"\ndelay 0.5\nclick button 1 of window 1 of process \"iOS-Simulator\"\nend tell";
 			showEnvVarsInLog = 0;
 		};
 		2F2B75B1C26844089C03CA74 /* Check Pods Manifest.lock */ = {
