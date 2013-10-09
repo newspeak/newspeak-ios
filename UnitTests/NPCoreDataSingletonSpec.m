@@ -22,13 +22,13 @@
 // THE SOFTWARE.
 //
 
-#import "Kiwi.h"
+#import "Specta.h"
+#import "Expecta.h"
 #import "NPCoreDataSingleton.h"
 
-SPEC_BEGIN(CoreDataSingletonTest)
+SpecBegin(CoreDataSingletonTest)
 
 describe(@"CoreDataSingleton", ^{
-    registerMatchers(@"CoreDataSingleton");
     __block NPCoreDataSingleton *coreDataSingleton;
     beforeAll(^{
         coreDataSingleton = [NPCoreDataSingleton sharedInstance];
@@ -37,39 +37,38 @@ describe(@"CoreDataSingleton", ^{
 
     context(@"when accessed", ^{
         it(@"should have default values set", ^{
-            [[theValue(coreDataSingleton.useCustomStore) should] beNo];
-            [[theValue(coreDataSingleton.useInMemoryStore) should] beNo];
+            expect(coreDataSingleton.useCustomStore).to.beFalsy();
+            expect(coreDataSingleton.useInMemoryStore).to.beFalsy();
         });
         it(@"should have a managed object model set", ^{
-            [[theValue(coreDataSingleton.managedObjectModel) should] beNonNil];
+            expect(coreDataSingleton.managedObjectModel).toNot.beNil();
         });
         it(@"should have a persistent store coordinator set", ^{
-            [[theValue(coreDataSingleton.persistentStoreCoordinator) should] beNonNil];
+            expect(coreDataSingleton.persistentStoreCoordinator).toNot.beNil();
         });
         it(@"should have a managed object context set", ^{
-            [[theValue(coreDataSingleton.managedObjectContext) should] beNonNil];
+            expect(coreDataSingleton.managedObjectContext).toNot.beNil();
         });
         it(@"should have one persistent store", ^{
-            coreDataSingleton = [NPCoreDataSingleton sharedInstance];
-            [[theValue([coreDataSingleton.persistentStoreCoordinator.persistentStores count]) should] equal:theValue(1)];
+            expect(coreDataSingleton.persistentStoreCoordinator.persistentStores.count).to.equal(1);
         });
         it(@"should have a sql store", ^{
             NSPersistentStore *persistentStore = [coreDataSingleton.persistentStoreCoordinator.persistentStores objectAtIndex:0];
-            [[[persistentStore type] should] equal:@"SQLite"];
+            expect(persistentStore).to.equal(@"SQLite");
         });
     });
 
     context(@"saving context", ^{
         it(@"should be successful", ^{
-            [[theValue([coreDataSingleton saveContext]) should] beYes];
+            expect([coreDataSingleton saveContext]).to.beTruthy();
         });
     });
 
     context(@"after reset", ^{
         it(@"should still have defaults set", ^{
             [coreDataSingleton reset];
-            [[theValue(coreDataSingleton.useCustomStore) should] beNo];
-            [[theValue(coreDataSingleton.useInMemoryStore) should] beNo];
+            expect(coreDataSingleton.useCustomStore).to.beFalsy();
+            expect(coreDataSingleton.useInMemoryStore).to.beFalsy();
         });
     });
 
@@ -79,13 +78,13 @@ describe(@"CoreDataSingleton", ^{
             coreDataSingleton.useInMemoryStore = YES;
         });
         it(@"should have one persistent store", ^{
-            [[theValue([coreDataSingleton.persistentStoreCoordinator.persistentStores count]) should] equal:theValue(1)];
+            expect(coreDataSingleton.persistentStoreCoordinator.persistentStores.count).to.equal(1);
         });
         it(@"should have an in-memory store", ^{
             NSPersistentStore *persistentStore = [coreDataSingleton.persistentStoreCoordinator.persistentStores objectAtIndex:0];
-            [[[persistentStore type] should] equal:@"InMemory"];
+            expect(persistentStore.type).to.equal(@"InMemory");
         });
     });
 });
 
-SPEC_END
+SpecEnd
